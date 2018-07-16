@@ -1,0 +1,433 @@
+/*
+ *Theme Name: t-kalach
+ *Version: 1.0
+ *Description: Template Web-studio Mcreate. The BEM methodology was used by Yandex.
+ *Author: Dmitrieffserzh
+ *Author URI: http://mcreate.ru
+ */
+// @include scrollbar(1.5em, #eee, #000);
+// @include bg-opacity(#000,0.85);
+// @include font-face(myFont, 'myFont.eot', 'myFont.woff', 'myFont.ttf', 'myFont.svg', '#myFont');
+// @include text-shadow(1px, 2px, 4px, #000);
+// @include bg-gradient-vertical(#fff, #000);
+// @include bg-gradient-horizontal(#fff, #000);
+// @include bg-radial(#fff, 0%, #000, 100%);
+// @include padding-all(26px, 10px, null, 10px);
+// @include padding(26px 10px 10px);
+// @include margin-all(26px, null, null, 10px);
+// @include margin(26px 10px 10px);
+// @include font-size-rem(26px);
+// @include size(100px, 100px);
+// @include border-radius(5px 10px 15px 20px);
+// @include border-image("border.png", 100%, 1, 0, stretch);
+// @include clearfix;
+// @include transition(background-color 1s .5s, color 2s);
+// @include vendor-prefixes($property, $value);
+// @include hoverActiveFocus($property, $value);
+// @include box-shadow(0px 4px 3px rgba(114, 114, 134, 0.27));
+// @include position($position, $top: null, $right: null, $bottom: null, $left: null);
+/* IMPORT LIBS >> ====================================================================================================*/
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&subset=cyrillic-ext');
+
+@import url("scss/reset.css");
+@import url("scss/grid.css");
+@import 'scss/libs';
+//+font-face(Intro, 'fonts/intro.eot', 'fonts/intro.woff', 'fonts/intro.woff2', 'fonts/intro.ttf', 'fonts/intro.svg', '#intro')
+
+/* GLOBAL STYLES >> ================================================================================================= */
+* {
+  text-rendering: geometricPrecision;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  outline: none;
+}
+.feather {
+  float: left;
+}
+html {
+  @include size(100%, 100%);
+}
+
+body {
+  position: relative;
+  @include padding(77px 0 0 0);
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif !important;
+  @include font-size-rem(16px);
+  color: #292b2d;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+  text-rendering: geometricPrecision !important;
+}
+
+h1 {
+  //font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 26.4px;
+}
+
+h3 {
+  //font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 15.4px;
+}
+
+p {
+  //font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+blockquote {
+  //font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 21px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+pre {
+  //font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 18.5714px;
+}
+
+//h1, h2, h3, h4, h5, h6 {
+//  color: #000;
+//  font-weight: 900;
+//}
+//
+//h1 {
+//  font-size: 30px;
+//}
+//
+//h2 {
+//  font-size: 25px;
+//}
+//
+//h3 {
+//  font-size: 20px;
+//}
+
+/* HEADER >> ======================================================================================================== */
+.header {
+  @include position(fixed, $top: 0);
+  @include padding(15px 0);
+  @include size(100%, auto);
+  @include transition(all 0.2s);
+  will-change: padding;
+  background: rgba(255, 255, 255, 0.95);
+  //background: rgba(255, 255, 255, 1);
+  @include box-shadow(0px 0px 5px rgba(0, 0, 0, 0.15));
+  z-index: 100;
+
+  &__logo {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    //background: url('img/logo.png') no-repeat left center;
+    @include size(235px, 44px);
+    background-size: contain;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.menu-block {
+  position: relative;
+}
+
+
+.main-menu {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__item {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    transition: all 0.05s;
+    &:hover .main-menu__link {
+      background: #37384c;
+      color: #ffffff;
+      transition: all 0.05s;
+    }
+    &:hover .main-menu__sub-menu {
+      visibility: visible;
+      opacity: 1;
+      transition: all 0.05s;
+    }
+  }
+  &__link {
+    display: block;
+    padding: 15px;
+    color: #3e3f55;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include transition(all 0.3s);
+  }
+
+  &__sub-menu {
+    position: absolute;
+    background: #37384c;
+    padding: 15px 15px 25px;
+    width: 250px;
+    min-height: 400px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    border-radius: 0 0 5px 5px;
+    &__link {
+      display: block;
+      padding: 5px 0;
+      color: #fff;
+      text-decoration: none;
+      @include transition(all 0.5s);
+    }
+  }
+}
+
+.button-menu {
+  position: relative;
+  display: none;
+  float: right;
+  background: transparent;
+  border: none;
+  padding: 3px 0;
+  margin: 0;
+  z-index: 130;
+  @include transition(all .3s);
+
+  & .icon-bar {
+    display: block;
+    background: #000;
+    margin: 4px;
+    width: 25px;
+    height: 2px;
+  }
+  &--open {
+   // transform: rotate(90deg);
+  }
+}
+
+.modal-bg {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 110;
+  &--open {
+    display: block;
+  }
+}
+
+.block-contacts {
+  color: #000;
+  padding: 12px;
+  & > span {
+    display: block;
+  }
+  & .email {
+    @include font-size-rem(13px);
+  }
+  & .time {
+    margin-bottom: 5px;
+    @include font-size-rem(13px);
+  }
+  & .phone {
+    color: #000;
+    font-weight: 700;
+    @include font-size-rem(17px);
+    & .feather {
+      width: 17px;
+      height: 17px;
+      margin: 0 5px 0 0;
+    }
+  }
+}
+
+.search-header {
+  float: right;
+
+  &__block {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    visibility: hidden;
+
+    & > .search-form > .search-input {
+      width: 90%;
+      padding: 9px;
+      margin: 0;
+      border: 1px solid #f5f5f8;
+    }
+  }
+  &__button {
+    background: transparent;
+    border: none;
+    z-index: 100;
+    position: relative;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER >> ================================================================================================= */
+.footer {
+  background: #2a2e36;
+  padding: 20px 0;
+  color: #c3c9d2;
+  text-shadow: none !important;
+}
+
+.footer-menu {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  &__item {
+    display: inline-block;
+    border-right: 1px Solid #485f7d;
+    &:last-child {border-right: none;}
+  }
+  &__link {
+    display: block;
+    padding: 0 15px;
+    font-size: 14px;
+    color: #7e8ea7;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include transition(all .3s);
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+#map {
+  background: url('img/map.png') no-repeat center center;
+  width: 100%;
+  height: 450px;
+}
+
+
+/* MEDIA QUERIES >> ================================================================================================= */
+@media screen and (max-width: 768px) {
+  .header {
+    &__logo {
+      height: 30px;
+    }
+  }
+  .button-menu {
+    display: block;
+  }
+  #menu-block {
+    position: absolute;
+    top: 0;
+    right: -75%;
+    padding: 65px 0 0;
+    background: #fff;
+    width: 70%;
+    @include box-shadow(0px 0px 15px rgba(0, 0, 0, 0.7));
+    @include transition(right .1s);
+    z-index: 120;
+  }
+  .open-menu {
+    right: 0 !important;
+  }
+  .main-menu {
+    display: block;
+    margin: 0 0 0 -15px;
+    &__item {
+      display: block;
+      border-bottom: none;
+      border-left: 3px Solid transparent;
+      text-align: left;
+      width: 100%;
+    }
+    &__link {
+      display: block;
+      padding: 7px 12px;
+      font-size: 16px;
+      font-weight: 700;
+      @include transition(all .3s);
+    }
+  }
+
+  .block-contacts {
+    border-top: 1px Solid #f5f5f8;
+    margin-top: 15px;
+    padding: 15px 0;
+  }
+
+  // FOOTER
+  .footer-menu {
+    width: 100%;
+    &__item {
+      display: block;
+      border: none;
+      width: 100%;
+    }
+    &__link {
+      display: block;
+      padding: 5px 0;
+      @include transition(all .3s);
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  .copyright {
+    border-top: 1px Solid #394548;
+    margin-top: 15px;
+    padding: 15px 15px 0;
+    color: #677275;
+    font-size: 10px;
+  }
+}
