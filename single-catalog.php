@@ -10,6 +10,11 @@ get_header();
 
 <section>
     <div class="container">
+
+	    <?php show_breadcrumb();?>
+
+
+
         <div class="row">
             <div class="<?php content_class_by_sidebar(); ?>">
                 <?php

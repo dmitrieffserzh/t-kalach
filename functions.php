@@ -131,11 +131,35 @@ if (!function_exists('content_class_by_sidebar')) {
 require 'components/menu.php';
 
 
+// Хлебные крошки
+function show_breadcrumb($name='catalog',$type='catalog'){
+	$list = "";
+	$home = get_bloginfo("home");
+	if ($type && $name){
+		$ans = get_term_by('name', $name, $type);
+		$parentID=$ans->parent;
+		while ($parentID > 0){
+			$parent = get_term_by('id', $parentID, $type);
+			$url = $home."/".$type."/".$parent->slug;
+			$list = "<li><a href='".$url."'>".$parent->name."</a></li>".$list;
+			$parentID = $parent->parent;
+		}
+		$url = $home."/".$type."/".$ans->slug;
+		$list = $list."<li>".$ans->name."</li>";
+	}
+
+	if ($list) echo "<ul><li><a href='$home'>Home</a></li>".$list."</ul>";
+}
+
+
+
+
+
+
+
 
 
 // CUSTOM FIELD REPEATER
-
-
 add_action('admin_head', 'my_custom_style');
 
 function my_custom_style() {
