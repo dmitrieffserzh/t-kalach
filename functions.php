@@ -13,8 +13,14 @@ register_nav_menus(array(
 ));
 
 add_theme_support('post-thumbnails');
-set_post_thumbnail_size(250, 150);
-add_image_size('big-thumb', 400, 400, true);
+set_post_thumbnail_size(400, 400);
+add_image_size('big-thumb', 400, 400, array( 'center', 'center' ));
+
+
+// IMAGE HELPER
+function image_thumbnails($url) {
+	return str_replace('.', '-400x400.', $url);
+}
 
 register_sidebar(array(
 	'name' => 'Сайдбар',

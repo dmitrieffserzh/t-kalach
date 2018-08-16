@@ -6,12 +6,14 @@
  */
 ?>
 </main>
+<?php if( is_front_page() ) { ?>
 <div id="map"></div>
+<?php } ?>
 <footer class="footer">
     <div class="container">
         <div class="col-lg-8">
             <div class="row">
-				<?php bem_menu( 'top', 'footer-menu' ); ?>
+				<?php bem_menu( 'bottom', 'footer-menu' ); ?>
             </div>
         </div>
         <div class="col-lg-4 copyright text-right">

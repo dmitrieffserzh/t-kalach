@@ -154,6 +154,6 @@ function bem_menu($location = "main_menu", $css_class_prefix = 'main-menu', $css
 	if (has_nav_menu($location)){
 		return wp_nav_menu($args);
 	}else{
-		echo "<p>You need to first define a menu in WP-admin<p>";
+		echo "<p>Выберите меню в панели управления!<p>";
 	}
 }

@@ -27,7 +27,7 @@ $options = array(
 	),
 	'centered' => array(
 		'type'    => 'switch',
-		'label'   => __('Centered', 'fw'),
+		'label'   => __('Centered', 'fw'), 
 //		'left-choice' => array(
 //			'value' => 'no',
 //			'label' => __('No', 'fw'),

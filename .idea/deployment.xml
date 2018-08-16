@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="Application">
+  <component name="PublishConfigData" autoUpload="On explicit save action" serverName="maski" autoUploadExternalChanges="true">
     <serverData>
       <paths name="Application">
         <serverdata>
@@ -48,6 +48,13 @@
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="maski">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/t-kalach/" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
@@ -101,5 +108,6 @@
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
   </component>
 </project>

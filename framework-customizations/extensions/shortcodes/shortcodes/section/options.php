@@ -3,6 +3,10 @@
 }
 
 $options = array(
+	'is_fullwidth' => array(
+		'label'        => __('Full Width'),
+		'type'         => 'switch',
+	),
 	'background_color' => array(
 		'label' => __('Background Color', 'fw'),
 		'desc'  => __('Please select the background color', 'fw'),
