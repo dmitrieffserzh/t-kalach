@@ -142,17 +142,28 @@ function my_custom_style() {
 	echo '<style>
 			.acf-repeater .acf-row {
 				float: left;
-				width: 10%;
-				height: 169px;
+				margin-top: -1px;
+				width: 12.5%;
+				height: 168px;
 			}
 			.acf-repeater .acf-row .acf-image-uploader img {
 			   	width: 111px;
     			height: 111px;
 			}
-			.acf-repeater .acf-row .acf-fields > .acf-field:first-child {
+			.acf-repeater .acf-row .acf-fields > .acf-field:first-child{
 			    border-top-width: 0;
-			    height: 169px;
-			        max-width: 135px;
+			    margin-top: 1px;
+			    height: 166px;
+			    max-width: 135px;
+			}
+			.acf-repeater .acf-row .acf-fields .acf-button {
+			    margin: 5px 0;
+    			padding: 5px;
+				font-size: 12px;
+    			line-height: 12px;
+				white-space: normal;
+				height: auto;
+				text-align: center;
 			}
   		</style>';
 }

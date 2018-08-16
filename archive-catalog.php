@@ -1,21 +1,20 @@
 <?php
 /**
- * Шаблон рубрики (category.php)
+ * Страница архивов записей (archive.php)
  * @package WordPress
- * @subpackage mcreate
+ * @subpackage Тертый калач
  */
-get_header(); ?>
+get_header();
+?>
     <section>
         <div class="container">
             <div class="row">
 
-                <h1 class="col-xs-12"><?php single_cat_title(); ?></h1>
+                <h1 class="col-xs-12">Каталог</h1> Archive catalog
 
                 <div class="catalog-category">
 					<?php
-					$cat        = get_query_var( 'cat' );
-					$categories = get_categories( 'parent=' . $cat . '&hide_empty=0' );
-
+					$categories = get_categories( 'taxonomy=catalog_category&hide_empty=0' );
 					foreach ( $categories as $category ) { ?>
 
                         <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
@@ -34,12 +33,6 @@ get_header(); ?>
 
 					<?php } ?>
                 </div>
-
-	            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		            <?php get_template_part('loop'); ?>
-	            <?php endwhile;
-	            else: echo '<p>Нет записей.</p>'; endif; ?>
-	            <?php pagination(); ?>
 
             </div>
         </div>
