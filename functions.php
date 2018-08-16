@@ -129,3 +129,30 @@ if (!function_exists('content_class_by_sidebar')) {
 
 // BEM MENU
 require 'components/menu.php';
+
+
+
+
+// CUSTOM FIELD REPEATER
+
+
+add_action('admin_head', 'my_custom_style');
+
+function my_custom_style() {
+	echo '<style>
+			.acf-repeater .acf-row {
+				float: left;
+				width: 10%;
+				height: 169px;
+			}
+			.acf-repeater .acf-row .acf-image-uploader img {
+			   	width: 111px;
+    			height: 111px;
+			}
+			.acf-repeater .acf-row .acf-fields > .acf-field:first-child {
+			    border-top-width: 0;
+			    height: 169px;
+			        max-width: 135px;
+			}
+  		</style>';
+}
