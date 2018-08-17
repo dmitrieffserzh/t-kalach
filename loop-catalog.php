@@ -17,7 +17,7 @@
 			?>
 
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <div class="carousel slide article-slide" id="article-photo-carousel">
+                <div class="carousel carousel-fade slide product-slide" id="product-photo-carousel">
 					<?php if ( ! $last_photo ) { ?>
                         <div class="carousel-inner cont-slider">
                             <div class="item active">
@@ -32,9 +32,7 @@
 							<?php
 							$count = 0;
 							foreach ( $last_photo as $item ) { ?>
-                                <div class="item<?php if ( $count == 0 ) {
-									echo ' active';
-								} ?>">
+                                <div class="item<?php  echo $count == 0 ? ' active' : '' ?>">
                                     <img alt="" title=""
                                          src="<?php echo $item['catalog_images_more']['sizes']['thumbnail']; ?>">
                                 </div>
@@ -42,12 +40,12 @@
 							} ?>
                         </div>
 
-                        <a class="left carousel-control" href="#article-photo-carousel" role="button"
+                        <a class="left carousel-control" href="#product-photo-carousel" role="button"
                            data-slide="prev">
                             <span class="carousel-control-left"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control" href="#article-photo-carousel" role="button"
+                        <a class="right carousel-control" href="#product-photo-carousel" role="button"
                            data-slide="next">
                             <span class="carousel-control-right"></span>
                             <span class="sr-only">Next</span>
@@ -59,7 +57,7 @@
 							foreach ( $last_photo as $item ) { ?>
                                 <li <?php if ( $count == 0 ) {
 									echo 'class="active"';
-								} ?> data-slide-to="<? echo $count; ?>" data-target="#article-photo-carousel">
+								} ?> data-slide-to="<? echo $count; ?>" data-target="#product-photo-carousel">
                                     <img alt="" src="<?php echo $item['catalog_images_more']['sizes']['micro']; ?>">
                                 </li>
 								<?php $count ++;
@@ -69,7 +67,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8">
-                <a href="<?php the_permalink(); ?>"><h2 class="h1"><?php the_title(); ?></h2></a>
+                <a href="<?php the_permalink(); ?>"><h1 class="h1"><?php the_title(); ?></h1></a>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-8">
 
