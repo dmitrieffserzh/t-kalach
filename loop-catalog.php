@@ -17,7 +17,7 @@
 			?>
 
             <div class="col-xs-12 col-sm-12 col-md-4">
-                <div class="carousel carousel-fade slide product-slide" id="product-photo-carousel">
+                <div class="carousel carousel-fade slide product-slide" id="product-carousel-<?php the_ID(); ?>">
 					<?php if ( ! $last_photo ) { ?>
                         <div class="carousel-inner cont-slider">
                             <div class="item active">
@@ -40,12 +40,12 @@
 							} ?>
                         </div>
 
-                        <a class="left carousel-control" href="#product-photo-carousel" role="button"
+                        <a class="left carousel-control" href="#product-carousel-<?php the_ID(); ?>" role="button"
                            data-slide="prev">
                             <span class="carousel-control-left"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="right carousel-control" href="#product-photo-carousel" role="button"
+                        <a class="right carousel-control" href="#product-carousel-<?php the_ID(); ?>" role="button"
                            data-slide="next">
                             <span class="carousel-control-right"></span>
                             <span class="sr-only">Next</span>
@@ -57,7 +57,7 @@
 							foreach ( $last_photo as $item ) { ?>
                                 <li <?php if ( $count == 0 ) {
 									echo 'class="active"';
-								} ?> data-slide-to="<? echo $count; ?>" data-target="#product-photo-carousel">
+								} ?> data-slide-to="<? echo $count; ?>" data-target="#product-carousel-<?php the_ID(); ?>">
                                     <img alt="" src="<?php echo $item['catalog_images_more']['sizes']['micro']; ?>">
                                 </li>
 								<?php $count ++;
@@ -76,7 +76,6 @@
 
                 <div class="catalog-info">
 					<?php if ( get_field( 'catalog_palitra' ) == true ) { ?>
-                        <hr>
                         <div class="catalog-palitra">
                             <ul class="catalog-palitra__list">
                                 <li class="catalog-palitra__item catalog-palitra__item--red"></li>
@@ -117,7 +116,7 @@
 					<?php } ?>
 
 
-                </div>
+
                 <div class="product-item__link">
                     <div class="product-item__price">
 						<?php if ( get_field( 'price' ) ) { ?>
@@ -126,6 +125,7 @@
                             Цена не указана
 						<?php } ?>
                     </div>
+                </div>
                 </div>
             </div>
         </div>
